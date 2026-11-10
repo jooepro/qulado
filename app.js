@@ -59,6 +59,18 @@ async function sendEndpoint(d){
   }catch(err){fs.textContent="Your inquiry could not be sent, so nothing was delivered. Please email "+CONFIG.contactEmail+" directly."}
   btn.disabled=false;
 }
+function showSendOptions(mailto,gmail,subject,body){
+  const box=$("#mailopts"),full="To: "+CONFIG.contactEmail+"\nSubject: "+subject+"\n\n"+body;
+  fs.className="show";
+  fs.textContent="Your message is ready but has not been sent. Choose how to send it below.";
+  box.hidden=false;
+  box.innerHTML=`<div class="opts"><a class="btn sm" href="${mailto}">Open email app</a><a class="btn sm ghost" href="${gmail}" target="_blank" rel="noopener noreferrer">Open in Gmail</a><button type="button" class="btn sm ghost" id="copy-msg">Copy message</button></div><label for="msg-copy">Or copy this and email it to ${CONFIG.contactEmail} from any email service:</label><textarea id="msg-copy" readonly rows="6"></textarea><p class="copy-note" id="copy-note" role="status"></p>`;
+  const ta=$("#msg-copy");ta.value=full;
+  $("#copy-msg").addEventListener("click",async()=>{
+    try{await navigator.clipboard.writeText(full);$("#copy-note").textContent="Copied. Paste it into an email to "+CONFIG.contactEmail+"."}
+    catch(e){ta.focus();ta.select();$("#copy-note").textContent="Press Ctrl+C (or Cmd+C) to copy the selected text."}
+  });
+}
 const pd=$("#privacy-dialog");
 $("#open-privacy").addEventListener("click",()=>pd.showModal());
 $("#close-privacy").addEventListener("click",()=>pd.close());
@@ -78,7 +90,8 @@ form.addEventListener("submit",e=>{
   if(useEndpoint){sendEndpoint(d);return}
   const body=`Name: ${d.name}\nEmail: ${d.email}\nCompany: ${d.company||"-"}\nOffer (USD): ${d.amount||"-"}\n\n${d.message}`;
   const url=`mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent("Inquiry about "+CONFIG.domain)}&body=${encodeURIComponent(body)}`;
-  fs.className="show";
-  fs.textContent="Your email app should now open with this inquiry ready. It has not been sent yet. Press send there to deliver it. If nothing opens, write to "+CONFIG.contactEmail+" directly.";
-  location.href=url;
+  const subject="Inquiry about "+CONFIG.domain;
+  const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONFIG.contactEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  showSendOptions(url,gmail,subject,body);
+  if(matchMedia("(pointer:coarse)").matches)location.href=url;
 });
