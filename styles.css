@@ -40,8 +40,20 @@ background:radial-gradient(60% 55% at 50% -5%,rgba(22,119,255,.38),transparent 7
 .mark .com{color:var(--accent);font-weight:500}
 @keyframes rise{from{opacity:0;transform:translateY(.28em)}to{opacity:1;transform:none}}
 .hero-grid{display:flex;flex-direction:column;align-items:center;gap:40px}
-.hero h1{font:600 clamp(30px,4.4vw,54px)/1.1 var(--sans);letter-spacing:.06em;max-width:20ch;margin:0 auto}
-.hero h1 em{font:400 italic 1.08em var(--serif);letter-spacing:.03em;color:#4C9BFF}
+.hero h1 {
+  font: 600 clamp(30px, 4.4vw, 54px)/1.2 var(--sans);
+  letter-spacing: 0.015em;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0.08em 0.12em;
+  overflow: visible;
+}
+
+.hero h1 em {
+  font: 400 italic 1.08em var(--serif);
+  letter-spacing: 0.01em;
+  color: #4C9BFF;
+}
 .hero p.sub{color:var(--stone);font-size:19px;max-width:48ch;margin:20px auto 0}
 .buy{display:flex;flex-direction:column;align-items:center}
 .price{font:600 clamp(40px,5.5vw,64px)/1 var(--sans);letter-spacing:-.04em}
