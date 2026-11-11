@@ -9,7 +9,7 @@ const CONFIG = {
   offerMethod: "mailto",                      // "mailto" (opens the visitor's email app) or "endpoint"
   offerEndpoint: "",                          // https URL of your form service; used only when offerMethod is "endpoint"
   // Replace this one value with the real Hostinger listing URL once it exists.
-  marketplaceUrl: "https://REPLACE-WITH-HOSTINGER-LISTING-URL"
+  marketplaceUrl: "https://checkoutlink.godaddy.com/66592b1a-f843-47ef-b70f-4ec8faf3397d"
 };
 /* ======================================================= */
 
