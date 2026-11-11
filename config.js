@@ -2,7 +2,7 @@
 /* ============ CONFIG: edit values here only ============ */
 const CONFIG = {
   domain: "Qulado.com",
-  price: 7495,
+  price: 5495,
   currency: "USD",
   available: true,
   contactEmail: "yousefshabank@gmail.com",   // used by "Make an Offer" and the form
