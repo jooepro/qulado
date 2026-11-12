@@ -7,9 +7,9 @@
 .hero-domain{font-size:clamp(3rem,10vw,8.5rem);line-height:.95;letter-spacing:-.09em;color:var(--text-primary);font-family:var(--sans);font-weight:800;margin:1.25rem auto 2rem;text-shadow:0 0 36px rgba(63,208,255,.16)}
 .hero h1 {
     margin-top: 0;
-    font-size: 32px;
+    font-size: 45px;
     font-weight: 500;
-    line-height: 0.5;
+    line-height: 1.1;
     letter-spacing: -0.02em;
 }.form-status{font-size:.82rem;min-height:1.5rem}.form-status-error{color:#ff9b9b}.form-status-success{color:#8ff0ba}.form-status-notice{color:var(--cyan)}.message-fallback{display:grid;gap:.8rem;border-top:1px solid var(--border-subtle);padding-top:1rem}.fallback-heading{color:var(--text-secondary);font-size:.82rem;margin:0}.generated-message{font-family:var(--mono);font-size:.72rem}.fallback-actions{display:flex;flex-wrap:wrap;gap:.5rem}.fallback-actions .button{min-height:42px;font-size:.72rem}
 .ticker span{font-family:var(--sans);font-style:normal;font-weight:600;letter-spacing:-.045em;color:var(--text-primary)}
