@@ -10,7 +10,6 @@
   setText("[data-domain]", CONFIG.domain);
   setText("[data-price]", `${money.format(CONFIG.price)} ${CONFIG.currency}`);
   setText("[data-availability]", CONFIG.availability);
-  document.querySelectorAll("[data-insight]").forEach((el, index) => {
   const animateInsight = (element, value, delay = 0) => {
   const match = String(value).match(/^(\d+)(.*)$/);
 
