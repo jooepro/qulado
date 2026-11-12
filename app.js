@@ -11,38 +11,64 @@
   setText("[data-price]", `${money.format(CONFIG.price)} ${CONFIG.currency}`);
   setText("[data-availability]", CONFIG.availability);
   document.querySelectorAll("[data-insight]").forEach((el, index) => {
-  const value = CONFIG.insights[el.dataset.insight] ?? "Not scored";
+  const animateInsight = (element, value, delay = 0) => {
   const match = String(value).match(/^(\d+)(.*)$/);
 
   if (!match) {
-    el.textContent = value;
+    element.textContent = value;
     return;
   }
 
   const target = Number(match[1]);
   const suffix = match[2];
-  const duration = 2000;
-  const delay = index * 120;
+  const duration = 1500;
   const startTime = performance.now() + delay;
 
-  const animateNumber = (time) => {
+  const update = (time) => {
     if (time < startTime) {
-      requestAnimationFrame(animateNumber);
+      requestAnimationFrame(update);
       return;
     }
 
     const progress = Math.min((time - startTime) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
 
-    el.textContent = `${Math.round(target * eased)}${suffix}`;
+    element.textContent = `${Math.round(target * eased)}${suffix}`;
 
     if (progress < 1) {
-      requestAnimationFrame(animateNumber);
+      requestAnimationFrame(update);
     }
   };
 
-  el.textContent = `0${suffix}`;
-  requestAnimationFrame(animateNumber);
+  element.textContent = `0${suffix}`;
+  requestAnimationFrame(update);
+};
+
+const insightObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const numbers = entry.target.querySelectorAll("[data-insight]");
+
+      if (entry.isIntersecting) {
+        numbers.forEach((element, index) => {
+          const value = CONFIG.insights[element.dataset.insight];
+          animateInsight(element, value, index * 120);
+        });
+      } else {
+        numbers.forEach((element) => {
+          const value = CONFIG.insights[element.dataset.insight];
+          const match = String(value).match(/^(\d+)(.*)$/);
+
+          element.textContent = match ? `0${match[2]}` : value;
+        });
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+document.querySelectorAll(".insight-card").forEach((card) => {
+  insightObserver.observe(card);
 });
   document.querySelectorAll("[data-email]").forEach((el) => { el.textContent = CONFIG.contactEmail; el.href = `mailto:${CONFIG.contactEmail}`; });
   document.title = `${CONFIG.domain} — A Name Ready for Its Next Big Idea`;
