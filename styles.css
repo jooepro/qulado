@@ -157,22 +157,6 @@
 .node-main {
   transition-delay: .6s;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .concept-visual,
-  .tech-visual .visual-chart b,
-  .tech-visual .visual-lines i,
-  .pay-visual .pay-card,
-  .pay-visual .pay-row,
-  .market-visual .product,
-  .market-caption,
-  .ai-visual .node,
-  .ai-visual .node-line,
-  .ai-visual > span {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 .hero-domain,
 .hero h1,
 .hero-lede,
@@ -183,7 +167,6 @@
   transform: translateY(18px);
   animation: hero-reveal 3s cubic-bezier(.22, 1, .36, 1) forwards;
 }
-
 .hero-domain {
   animation-delay: .1s;
 }
