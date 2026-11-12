@@ -54,8 +54,11 @@ const insightObserver = new IntersectionObserver(
 
       if (entry.isIntersecting) {
         numbers.forEach((element, index) => {
-          const value = CONFIG.insights[element.dataset.insight];
-          animateInsight(element, value, index * 120);
+          animateInsight(
+            element,
+            CONFIG.insights[element.dataset.insight],
+            index * 120
+          );
         });
       } else {
         numbers.forEach((element) => {
@@ -67,9 +70,7 @@ const insightObserver = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.3
-  }
+  { threshold: 0.3 }
 );
 
 document.querySelectorAll(".insight-card").forEach((card) => {
