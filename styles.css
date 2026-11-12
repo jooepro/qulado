@@ -165,7 +165,7 @@
 .hero .purchase-note {
   opacity: 0;
   transform: translateY(18px);
-  animation: hero-reveal 3s cubic-bezier(.22, 1, .36, 1) forwards;
+  animation: hero-reveal 4s cubic-bezier(.22, 1, .36, 1) forwards;
 }
 .hero-domain {
   animation-delay: .1s;
