@@ -84,5 +84,95 @@
     transform: translate3d(25px, 20px, 0) scale(1.04);
   }
 }
+.concept-visual {
+  opacity: 0;
+  transform: translateY(24px) scale(.96);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.concept.is-visible .concept-visual {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.concept:nth-child(2) .concept-visual {
+  transition-delay: .15s;
+}
+
+.concept:nth-child(3) .concept-visual {
+  transition-delay: .3s;
+}
+
+.concept:nth-child(4) .concept-visual {
+  transition-delay: .45s;
+}
+
+.tech-visual .visual-chart b,
+.tech-visual .visual-lines i,
+.pay-visual .pay-card,
+.pay-visual .pay-row,
+.market-visual .product,
+.market-caption,
+.ai-visual .node,
+.ai-visual .node-line,
+.ai-visual > span {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.concept.is-visible .visual-chart b,
+.concept.is-visible .visual-lines i,
+.concept.is-visible .pay-card,
+.concept.is-visible .pay-row,
+.concept.is-visible .product,
+.concept.is-visible .market-caption,
+.concept.is-visible .node,
+.concept.is-visible .node-line,
+.concept.is-visible .ai-visual > span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visual-chart b:nth-child(2),
+.pay-row:nth-of-type(2),
+.product-two,
+.node-b {
+  transition-delay: .15s;
+}
+
+.visual-chart b:nth-child(3),
+.pay-row:nth-of-type(3),
+.product-three {
+  transition-delay: .3s;
+}
+
+.visual-chart b:nth-child(4),
+.market-caption,
+.node-line {
+  transition-delay: .45s;
+}
+
+.visual-chart b:nth-child(5),
+.node-main {
+  transition-delay: .6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-visual,
+  .tech-visual .visual-chart b,
+  .tech-visual .visual-lines i,
+  .pay-visual .pay-card,
+  .pay-visual .pay-row,
+  .market-visual .product,
+  .market-caption,
+  .ai-visual .node,
+  .ai-visual .node-line,
+  .ai-visual > span {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 /* Refined contrast: brighter supporting text and a more legible faceted mark. */
 :root{--text-secondary:#c6dce7;--text-muted:#abc4d3;--text-accent:#62d9f5}
