@@ -118,4 +118,19 @@
   document.querySelector(".privacy-link")?.addEventListener("click", () => dialog?.showModal());
   document.querySelector(".dialog-close")?.addEventListener("click", () => dialog?.close());
   dialog?.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+  const conceptObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.25 }
+);
+
+document.querySelectorAll(".concept").forEach((card) => {
+  conceptObserver.observe(card);
+});
 })();
