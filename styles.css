@@ -8,7 +8,7 @@
 .hero h1 {
     margin-top: 0;
     font-size: clamp(36px, 6vw, 76px);
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.04em;
 }.form-status{font-size:.82rem;min-height:1.5rem}.form-status-error{color:#ff9b9b}.form-status-success{color:#8ff0ba}.form-status-notice{color:var(--cyan)}.message-fallback{display:grid;gap:.8rem;border-top:1px solid var(--border-subtle);padding-top:1rem}.fallback-heading{color:var(--text-secondary);font-size:.82rem;margin:0}.generated-message{font-family:var(--mono);font-size:.72rem}.fallback-actions{display:flex;flex-wrap:wrap;gap:.5rem}.fallback-actions .button{min-height:42px;font-size:.72rem}
