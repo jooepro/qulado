@@ -1,13 +1,11 @@
-Qulado.com static site (no build step, no dependencies)
+QULADO.COM STATIC DOMAIN SALE WEBSITE
 
-Files
-  index.html  page content
-  styles.css  design system and layout
-  config.js   EDIT THIS: price, email, marketplace URL, availability, form endpoint, insight scores
-  app.js      behavior (reads config.js)
+Stage 2 delivers the complete visual frontend structure for the Qulado.com domain sale page.
 
-Go live
-  1. In config.js set marketplaceUrl to the real Hostinger listing URL. All Acquire buttons update.
-  2. Optional: set offerMethod to "endpoint" and offerEndpoint to an https form-service URL.
-  3. Upload all four files to any static host.
-  4. In index.html, update the canonical/og:url (https://qulado.com/) if hosted elsewhere, and add an og:image if you have one.
+Files:
+- index.html   Page structure and content
+- styles.css   Design tokens, responsive layout, and visual system
+- config.js    Single source of truth for domain and business values
+- app.js       Initial config rendering and visual dialog wiring
+
+The Afternic CTA states, offer delivery behavior, validation, SEO verification, privacy implementation, and QA are intentionally completed in later controlled stages.
