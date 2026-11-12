@@ -69,7 +69,7 @@
     12vw 91vh var(--azure),
     36vw 48vh var(--cyan),
     81vw 88vh var(--azure);
-  animation: sparkle-drift 26s ease-in-out infinite alternate;
+  animation: sparkle-drift 16s ease-in-out infinite alternate;
 }
 
 .sparkle-field {
@@ -103,7 +103,7 @@
     12vw 91vh var(--azure),
     36vw 48vh var(--cyan),
     81vw 88vh var(--azure);
-  animation: sparkle-drift 10s ease-in-out infinite alternate;
+  animation: sparkle-drift 6s ease-in-out infinite alternate;
 }
 
 .sparkle-field::after {
