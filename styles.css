@@ -173,6 +173,65 @@
     transform: none;
     transition: none;
   }
+  .hero-domain,
+.hero h1,
+.hero-lede,
+.hero-meta,
+.hero-actions,
+.hero .purchase-note {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-reveal .9s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.hero-domain {
+  animation-delay: .1s;
+}
+
+.hero h1 {
+  animation-delay: .25s;
+}
+
+.hero-lede {
+  animation-delay: .4s;
+}
+
+.hero-meta {
+  animation-delay: .55s;
+}
+
+.hero-actions {
+  animation-delay: .7s;
+}
+
+.hero .purchase-note {
+  animation-delay: .85s;
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-domain,
+  .hero h1,
+  .hero-lede,
+  .hero-meta,
+  .hero-actions,
+  .hero .purchase-note {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
 }
 /* Refined contrast: brighter supporting text and a more legible faceted mark. */
 :root{--text-secondary:#c6dce7;--text-muted:#abc4d3;--text-accent:#62d9f5}
