@@ -219,17 +219,6 @@
     transform: translateY(0);
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-domain,
-  .hero h1,
-  .hero-lede,
-  .hero-meta,
-  .hero-actions,
-  .hero .purchase-note {
-    opacity: 1;
-    transform: none;
-    animation: none;}
-}
+  }
 /* Refined contrast: brighter supporting text and a more legible faceted mark. */
 :root{--text-secondary:#c6dce7;--text-muted:#abc4d3;--text-accent:#62d9f5}
