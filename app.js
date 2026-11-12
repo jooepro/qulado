@@ -7,10 +7,14 @@
   const amountField = form?.querySelector('[name="amount"]');
   const setText = (selector, value) => document.querySelectorAll(selector).forEach((el) => { el.textContent = value; });
 
-  setText("[data-domain]", CONFIG.domain);
-  setText("[data-price]", `${money.format(CONFIG.price)} ${CONFIG.currency}`);
-  setText("[data-availability]", CONFIG.availability);
-  const animateInsight = (element, value, delay = 0) => {
+ setText("[data-domain]", CONFIG.domain);
+setText(
+  "[data-price]",
+  `${money.format(CONFIG.price)} ${CONFIG.currency}`
+);
+setText("[data-availability]", CONFIG.availability);
+
+const animateInsight = (element, value, delay = 0) => {
   const match = String(value).match(/^(\d+)(.*)$/);
 
   if (!match) {
@@ -63,7 +67,9 @@ const insightObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.3 }
+  {
+    threshold: 0.3
+  }
 );
 
 document.querySelectorAll(".insight-card").forEach((card) => {
