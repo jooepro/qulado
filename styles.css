@@ -72,29 +72,55 @@
   animation: sparkle-drift 26s ease-in-out infinite alternate;
 }
 
+.sparkle-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .65;
+}
+
+.sparkle-field::before,
+.sparkle-field::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow:
+    8vw 12vh var(--cyan),
+    18vw 68vh var(--azure),
+    29vw 24vh var(--cyan),
+    42vw 82vh var(--azure),
+    55vw 16vh var(--cyan),
+    67vw 58vh var(--azure),
+    76vw 31vh var(--cyan),
+    88vw 74vh var(--azure),
+    94vw 18vh var(--cyan),
+    12vw 91vh var(--azure),
+    36vw 48vh var(--cyan),
+    81vw 88vh var(--azure);
+  animation: sparkle-drift 10s ease-in-out infinite alternate;
+}
+
 .sparkle-field::after {
   width: 2px;
   height: 2px;
-  opacity: .6;
-  animation-duration: 34s;
+  opacity: .55;
+  animation-duration: 15s;
   animation-direction: alternate-reverse;
-  transform: translate(-20px, 15px);
 }
 
 @keyframes sparkle-drift {
   from {
-    transform: translate3d(-10px, -8px, 0);
+    transform: translate3d(-30px, -20px, 0);
   }
 
   to {
-    transform: translate3d(12px, 14px, 0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sparkle-field::before,
-  .sparkle-field::after {
-    animation: none;
+    transform: translate3d(30px, 25px, 0);
   }
 }
 /* Refined contrast: brighter supporting text and a more legible faceted mark. */
