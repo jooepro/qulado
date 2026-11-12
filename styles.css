@@ -40,87 +40,43 @@
   z-index: 1;
 }
 
-.sparkle-field {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: .55;
-}
-
-.sparkle-field::before,
-.sparkle-field::after {
-  content: "";
+.sparkle-field i {
   position: absolute;
   width: 3px;
   height: 3px;
   border-radius: 50%;
   background: var(--cyan);
-  box-shadow:
-    8vw 12vh var(--cyan),
-    18vw 68vh var(--azure),
-    29vw 24vh var(--cyan),
-    42vw 82vh var(--azure),
-    55vw 16vh var(--cyan),
-    67vw 58vh var(--azure),
-    76vw 31vh var(--cyan),
-    88vw 74vh var(--azure),
-    94vw 18vh var(--cyan),
-    12vw 91vh var(--azure),
-    36vw 48vh var(--cyan),
-    81vw 88vh var(--azure);
-  animation: sparkle-drift 16s ease-in-out infinite alternate;
+  animation: random-sparkle 6s ease-in-out infinite alternate;
 }
 
-.sparkle-field {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: .65;
-}
+.sparkle-field i:nth-child(1) { left: 10%; top: 20%; animation-duration: 4s; }
+.sparkle-field i:nth-child(2) { left: 25%; top: 70%; animation-duration: 7s; }
+.sparkle-field i:nth-child(3) { left: 40%; top: 35%; animation-duration: 5s; }
+.sparkle-field i:nth-child(4) { left: 55%; top: 80%; animation-duration: 9s; }
+.sparkle-field i:nth-child(5) { left: 68%; top: 18%; animation-duration: 6s; }
+.sparkle-field i:nth-child(6) { left: 78%; top: 55%; animation-duration: 8s; }
+.sparkle-field i:nth-child(7) { left: 88%; top: 30%; animation-duration: 5s; }
+.sparkle-field i:nth-child(8) { left: 92%; top: 85%; animation-duration: 10s; }
 
-.sparkle-field::before,
-.sparkle-field::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--cyan);
-  box-shadow:
-    8vw 12vh var(--cyan),
-    18vw 68vh var(--azure),
-    29vw 24vh var(--cyan),
-    42vw 82vh var(--azure),
-    55vw 16vh var(--cyan),
-    67vw 58vh var(--azure),
-    76vw 31vh var(--cyan),
-    88vw 74vh var(--azure),
-    94vw 18vh var(--cyan),
-    12vw 91vh var(--azure),
-    36vw 48vh var(--cyan),
-    81vw 88vh var(--azure);
-  animation: sparkle-drift 6s ease-in-out infinite alternate;
-}
-
-.sparkle-field::after {
-  width: 2px;
-  height: 2px;
-  opacity: .55;
-  animation-duration: 15s;
-  animation-direction: alternate-reverse;
-}
-
-@keyframes sparkle-drift {
-  from {
-    transform: translate3d(-30px, -20px, 0);
+@keyframes random-sparkle {
+  0% {
+    transform: translate(0, 0) scale(.7);
+    opacity: .25;
   }
 
-  to {
-    transform: translate3d(30px, 25px, 0);
+  35% {
+    transform: translate(35px, -25px) scale(1.4);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translate(-28px, 30px) scale(.9);
+    opacity: .55;
+  }
+
+  100% {
+    transform: translate(20px, 12px) scale(1.2);
+    opacity: .8;
   }
 }
 /* Refined contrast: brighter supporting text and a more legible faceted mark. */
