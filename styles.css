@@ -184,40 +184,16 @@
   animation: hero-reveal .9s cubic-bezier(.22, 1, .36, 1) forwards;
 }
 
-.hero-domain {
-  animation-delay: .1s;
-}
-
-.hero h1 {
-  animation-delay: .25s;
-}
-
-.hero-lede {
-  animation-delay: .4s;
-}
-
-.hero-meta {
-  animation-delay: .55s;
-}
-
-.hero-actions {
-  animation-delay: .7s;
-}
-
+.hero-domain,
+.hero h1,
+.hero-lede,
+.hero-meta,
+.hero-actions,
 .hero .purchase-note {
-  animation-delay: .85s;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-reveal 0.9s cubic-bezier(.22, 1, .36, 1) forwards;
 }
-
-@keyframes hero-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
   }
 /* Refined contrast: brighter supporting text and a more legible faceted mark. */
