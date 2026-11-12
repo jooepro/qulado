@@ -4,13 +4,7 @@
 @media(max-width:520px){.site-header{height:66px}.desktop-nav .button{padding:0 .7rem;font-size:.7rem}.hero{min-height:calc(100vh - 66px)}.hero h1{font-size:clamp(2.4rem,12vw,3.6rem)}.feature-grid,.insight-grid{grid-template-columns:1fr}.feature-grid article{min-height:auto}.letter-row{margin-bottom:2rem}.statement-copy,.steps{grid-template-columns:1fr;gap:1rem}.steps{margin-top:3rem}.acquisition-price{font-size:clamp(3rem,17vw,5.5rem)}.hero-actions{flex-direction:column}.hero-actions .button{width:100%}.site-footer{align-items:flex-start;flex-direction:column}.section-pad{padding-top:4.5rem;padding-bottom:4.5rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}}
 
-.hero-domain {
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: 700;
-  line-height: .9;
-  letter-spacing: -0.08em;
-  margin: 2rem auto 2.5rem;
-}
+.hero-domain{font-size:clamp(3rem,10vw,8.5rem);line-height:.95;letter-spacing:-.03em;color:var(--text-primary);font-family:var(--sans);font-weight:800;margin:1.25rem auto 2rem;text-shadow:0 0 36px rgba(63,208,255,.16)}
 .hero h1 {
   font-size: clamp(2.2rem, 6vw, 5rem);
   line-height: 1.05;
