@@ -21,7 +21,7 @@
 
   const target = Number(match[1]);
   const suffix = match[2];
-  const duration = 1000;
+  const duration = 2000;
   const delay = index * 120;
   const startTime = performance.now() + delay;
 
