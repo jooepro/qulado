@@ -208,6 +208,7 @@
   animation-delay: .85s;
 }
 
+
 @keyframes hero-reveal {
   from {
     opacity: 0;
@@ -232,6 +233,5 @@
     animation: none;
   }
 }
-  }
 /* Refined contrast: brighter supporting text and a more legible faceted mark. */
 :root{--text-secondary:#c6dce7;--text-muted:#abc4d3;--text-accent:#62d9f5}
