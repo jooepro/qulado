@@ -113,7 +113,24 @@
       threshold: 0.3
     }
   );
+const conceptObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      } else {
+        entry.target.classList.remove("is-visible");
+      }
+    });
+  },
+  {
+    threshold: 0.25
+  }
+);
 
+document.querySelectorAll(".concept").forEach((card) => {
+  conceptObserver.observe(card);
+});
   document.querySelectorAll(".insight-card").forEach((card) => {
     insightObserver.observe(card);
   });
