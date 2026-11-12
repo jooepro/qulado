@@ -10,7 +10,40 @@
   setText("[data-domain]", CONFIG.domain);
   setText("[data-price]", `${money.format(CONFIG.price)} ${CONFIG.currency}`);
   setText("[data-availability]", CONFIG.availability);
-  document.querySelectorAll("[data-insight]").forEach((el) => { el.textContent = CONFIG.insights[el.dataset.insight] ?? "Not scored"; });
+  document.querySelectorAll("[data-insight]").forEach((el, index) => {
+  const value = CONFIG.insights[el.dataset.insight] ?? "Not scored";
+  const match = String(value).match(/^(\d+)(.*)$/);
+
+  if (!match) {
+    el.textContent = value;
+    return;
+  }
+
+  const target = Number(match[1]);
+  const suffix = match[2];
+  const duration = 1000;
+  const delay = index * 120;
+  const startTime = performance.now() + delay;
+
+  const animateNumber = (time) => {
+    if (time < startTime) {
+      requestAnimationFrame(animateNumber);
+      return;
+    }
+
+    const progress = Math.min((time - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+
+    el.textContent = `${Math.round(target * eased)}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(animateNumber);
+    }
+  };
+
+  el.textContent = `0${suffix}`;
+  requestAnimationFrame(animateNumber);
+});
   document.querySelectorAll("[data-email]").forEach((el) => { el.textContent = CONFIG.contactEmail; el.href = `mailto:${CONFIG.contactEmail}`; });
   document.title = `${CONFIG.domain} — A Name Ready for Its Next Big Idea`;
   document.querySelector('meta[name="description"]')?.setAttribute("content", `${CONFIG.domain} is a distinctive, versatile .com domain available for its next big idea.`);
