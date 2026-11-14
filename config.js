@@ -1,6 +1,6 @@
 const CONFIG = {
   domain: "Qulado.com",
-  price: 5499,
+  price: 2000,
   currency: "USD",
   availability: "Available",
   contactEmail: "yousefshabank@gmail.com",
