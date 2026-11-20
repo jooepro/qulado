@@ -4,7 +4,7 @@ const CONFIG = {
   currency: "USD",
   availability: "Available",
   contactEmail: "yousefshabank@gmail.com",
-  afternicUrl: "https://www.godaddy.com/en/domainsearch/find?domainToCheck=sclime.com",
+  afternicUrl: "https://www.godaddy.com/en/domainsearch/find?domainToCheck=qulado.com",
   offerMethod: "email",
   offerEndpoint: "",
   insights: {
